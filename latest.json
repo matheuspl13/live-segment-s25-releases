@@ -1,19 +1,19 @@
 {
   "schema": "live-segment/update-manifest/v1",
-  "versionCode": 9,
-  "versionName": "0.9.0-s25",
-  "sha256": "ce8896e20919593edde7b8bbcca890ed47de59e963df2563b254ed0249612703",
-  "totalBytes": 2692134,
-  "notes": "Corrige a falha Top10 da V0.8 comparando a corrida virtual pelo progresso da rota, sem exigir a mesma quantidade de pontos do ghost. Paradas agora contam somente como pausa: o tempo em movimento e a disputa contra os 10 históricos ficam congelados até você voltar a pedalar. A notificação de início passa a mostrar COMEÇOU. O simulador agora faz ida e volta com você terminando em 1º, inclui exemplos reais de PASSOU/PASSADO e grava a própria simulação como o último log compartilhável.",
+  "versionCode": 10,
+  "versionName": "0.10.0-s25",
+  "sha256": "c73a1011939efdf57802ce8ccf6e5b29abfff951c134c1a0de028fcc93117c5f",
+  "totalBytes": 2693450,
+  "notes": "A simulação agora reproduz exatamente o desempenho histórico do Top 1 em cada sentido, ponto a ponto, e disputa contra os outros nove registros sem duplicar o próprio Top 1. Ida termina em 47:40 e volta em 46:11, conforme os dados históricos. Paradas continuam congelando tempo, progresso e classificação. Corrigido KN para KM e posições padronizadas como P1, P2, P5 em notificações, interface e diagnóstico.",
   "chunks": [
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part00.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part01.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part02.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part03.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part04.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part05.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part06.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part07.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.9/part08.b64"
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part00.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part01.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part02.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part03.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part04.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part05.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part06.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part07.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.10/part08.b64"
   ]
 }
