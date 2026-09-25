@@ -1,19 +1,19 @@
 {
   "schema": "live-segment/update-manifest/v1",
-  "versionCode": 7,
-  "versionName": "0.7.0-s25",
-  "sha256": "6632c182d3e1615c616a483183792b9c5dfc2cefd838255e134b0549cae9e074",
-  "totalBytes": 2517258,
-  "notes": "Modo de rua: botão único Ativar/Encerrar Live, início e fim automáticos em A/B, notificações K12 +5s sem ida/volta, simulação completa ida+volta com teste de A/B e auto-pause, e correção do CSV de auditoria.",
+  "versionCode": 8,
+  "versionName": "0.8.0-s25",
+  "sha256": "8bc3538cc909406333de32e5383f79db16f2a8c3907a38a3c7e726e3b59923b9",
+  "totalBytes": 2684762,
+  "notes": "Corrida virtual contra seus 10 melhores históricos em cada sentido. Notificações KN + posição + diferença para a posição à frente, alertas PASSOU/PASSADO e FIM com colocação. Perfis reais dos Top 10 de ida e volta integrados ao APK e simulação completa atualizada para testar o pelotão virtual.",
   "chunks": [
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part00.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part01.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part02.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part03.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part04.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part05.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part06.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part07.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.7/part08.b64"
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part00.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part01.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part02.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part03.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part04.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part05.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part06.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part07.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.8/part08.b64"
   ]
 }
