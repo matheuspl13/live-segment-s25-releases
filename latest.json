@@ -1,20 +1,20 @@
 {
   "schema": "live-segment/update-manifest/v1",
-  "versionCode": 12,
-  "versionName": "0.12.0-s25",
-  "sha256": "c057e5bf9557afe86915a3250be0004772203c0e1f15e2f9be2b7e598c21f07e",
-  "totalBytes": 2739678,
-  "notes": "V0.12 final após auditoria e testes reais de ida/volta. Corrige detecção robusta dos gates A/B, relógio em GPS fraco, recuperação curta da sessão, Top 10 histórico validado e encerramento alternativo conservador da ida. No BSC200, os avisos passam a alternar por tempo em movimento: 00:30/01:30... mostram posição e gaps aos rivais adjacentes (ex.: P5 -15 / +12); 01:00/02:00... mostram KM e diferença para o recorde (ex.: K17 R-105S). Alertas instantâneos PASSOU/PASSADO deixam de ser enviados ao BSC para evitar sobreposição; continuam registrados no log. O log inclui gaps ao rival à frente e atrás.",
+  "versionCode": 13,
+  "versionName": "0.13.0-s25",
+  "sha256": "e702771f9afc9721c7450502768a36b412cd866cd7fc80bcb35760f3b68cd2da",
+  "totalBytes": 2748438,
+  "notes": "V0.13 adiciona Histórico e Relatórios no aplicativo, já com o pedal de 25/09 como primeiro registro e gravação automática das próximas IDAs/VOLTAs concluídas. Ajusta também o texto do BSC200 para separar o marcador de recorde do valor: K17 R -105S / K17 R +20S. O núcleo da V0.12 permanece inalterado: autopause, gates, fallback, ranking, GPS e relógio não foram modificados nesta versão.",
   "chunks": [
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part00.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part01.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part02.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part03.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part04.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part05.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part06.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part07.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part08.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.12/part09.b64"
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part00.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part01.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part02.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part03.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part04.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part05.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part06.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part07.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part08.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.13/part09.b64"
   ]
 }
