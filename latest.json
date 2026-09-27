@@ -4,7 +4,7 @@
   "versionName": "0.15.5-s25",
   "sha256": "a1f0a3c22088dde07e84163bbb09acebd03a5a75fc9d9c1a20a2cca5ee433e54",
   "totalBytes": 2842929,
-  "notes": "Hotfix das notificações no BSC200. O Live continuava calculando posição e recorde, mas reutilizava a mesma chave de notificação Android; o iGPSPORT/BSC200 podia deixar de espelhar as atualizações seguintes. A 0.15.5 usa uma chave nova/rotativa para cada status, mantendo apenas a anterior ativa. GPS, gate, relógio, ranking e dados permanecem iguais à 0.15.4.",
+  "notes": "Hotfix do espelhamento de notificações no BSC200. Cada atualização de posição/recorde volta a usar uma nova chave de notificação, evitando que o iGPSPORT/BSC trate as atualizações seguintes como a mesma mensagem. GPS, gate, ranking e relógio não foram alterados.",
   "chunks": [
     "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part00.b64",
     "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part01.b64",
