@@ -1,20 +1,20 @@
 {
   "schema": "live-segment/update-manifest/v1",
-  "versionCode": 20,
-  "versionName": "0.15.5-s25",
-  "sha256": "a1f0a3c22088dde07e84163bbb09acebd03a5a75fc9d9c1a20a2cca5ee433e54",
-  "totalBytes": 2842929,
-  "notes": "Hotfix do espelhamento de notificações no BSC200. Cada atualização de posição/recorde volta a usar uma nova chave de notificação, evitando que o iGPSPORT/BSC trate as atualizações seguintes como a mesma mensagem. GPS, gate, ranking e relógio não foram alterados.",
+  "versionCode": 25,
+  "versionName": "0.16.0-s25-field1",
+  "sha256": "1a3e04683ca1a07349402591bb668997b14e9b4f8e9563d0d0447bc6f4fbadc8",
+  "totalBytes": 2924107,
+  "notes": "Candidato de campo 0.16.0. Endurece reconexão BLE/Service Changed/CCCD contra callbacks obsoletos, preserva o pipeline de notificações START/status/km final/FINISH e remove rajadas de cancelamentos legados. Inclui regressões reais IDA e VOLTA, inclusive pausa real de ~34 s, spike e reorder. Build limpo Android 16 assinado. Ainda é candidato para teste físico controlado no BSC200.",
   "chunks": [
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part00.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part01.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part02.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part03.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part04.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part05.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part06.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part07.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part08.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.15.5/part09.b64"
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part00.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part01.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part02.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part03.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part04.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part05.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part06.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part07.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part08.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.16.0-field1/part09.b64"
   ]
 }
