@@ -25,4 +25,4 @@ Se uma versão de campo apresentar crash/ANR, regressão de relógio/progresso, 
 
 ## Candidato atual
 
-Em 2026-09-28, o candidato publicado é `0.16.0-s25-field1` (`versionCode 25`).
+Em 2026-09-28, o candidato preparado para publicação é `0.16.1-s25-field2` (`versionCode 26`).
