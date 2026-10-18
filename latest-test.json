@@ -1,21 +1,21 @@
 {
-  "versionCode": 44,
-  "versionName": "0.17.17-s25-legacy-rankings-paiva-start-test",
-  "sha256": "b396444be8f7ce8f885c8d43b0ec7f3bff9d61226d82451308d08ea1595c00e4",
-  "totalBytes": 3317796,
-  "notes": "TESTE 0.17.17 — restaura integralmente os Top 10 anteriores da Via Mangue (1–5 voltas: 10 adversários; 6 voltas: 9 adversários historicamente validados) e seus fantasmas espaciais originais de 501 pontos, sem substituir suas regras por interpolações recentes. Restaura exibição dos rankings históricos 100 km MOVING/ELAPSED, idênticos aos perfis de Virtual Racing existentes. Preserva seleção única do botão TOP 10 para Paiva (IDA/VOLTA/IDA+VOLTA), Via Mangue (1–6) e 100 km. START Paiva: previne perda de largada por falha temporária de GPS do celular usando amostras BSC200 independentes para ARMAR o sampler, que ainda exige cruzamento físico correto, timer MOVING, direção e qualidade válidos; sem alterar gates e FINISH. Regressão GitHub Actions: 376 testes/61 suítes, 0 falhas, build limpo API36 e mesma assinatura de atualizações. Confirmação de espelhamento audible BSC200 ainda requer pedal físico.",
+  "versionCode": 45,
+  "versionName": "0.17.18-s25-paiva-p1-finish-sequence-test",
+  "sha256": "810af9f56c502e374b3ccee8baad335d8659a29ff9b591345bb52404628e7bd8",
+  "totalBytes": 3322156,
+  "notes": "TESTE 0.17.18 — IDA Paiva 17/10/2026: novo P1 43:58,81 MOVING (25,434014 km, 34,70 km/h) com fantasma real reconstruído de 2.575 pontos do CSV/BSC200, sem velocidade uniforme; P1 15/10 vira P2. Combinado IDA+VOLTA 17/10: P3 informativo 1:33:18,23 (IDA 43:58,81 + VOLTA 49:19,42); VOLTA individual não muda (P11). FINISH: sequência BSC200 em 0s FIM P, +10s +vantagem/-desvantagem sobre rivais adjacentes, +20s tempo oficial [M S], +30s velocidade média [km/h], para Paiva IDA/VOLTA, Via Mangue 1–6 voltas, 100 km MOVING ou ELAPSED; um único status com cancelamento de frames pendentes no novo START para evitar notificações velhas. Remove aviso preliminar de FINISH antes de reconciliar BSC. Mantidos gates e rankings históricos Via Mangue e 100km. Testes automatizados Android 35/36 e CI assinado aprovados; espelhamento físico no iGPSPORT BSC200 precisa validação em campo.",
   "chunks": [
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part00.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part01.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part02.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part03.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part04.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part05.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part06.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part07.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part08.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part09.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part10.b64",
-    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.17-test/part11.b64"
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part00.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part01.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part02.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part03.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part04.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part05.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part06.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part07.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part08.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part09.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part10.b64",
+    "https://raw.githubusercontent.com/mplimar13/live-segment-s25-releases/main/v0.17.18-test/part11.b64"
   ]
 }
