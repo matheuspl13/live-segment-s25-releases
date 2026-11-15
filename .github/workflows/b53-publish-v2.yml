@@ -20,7 +20,7 @@ jobs:
       - name: Download short-lived private signed B53 artifact and verify immutable identity
         shell: bash
         env:
-          ARTIFACT_URL: "https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-8598-820e-9393-6092cb5c2fbd/raw?se=2026-11-15T05%3A44%3A17Z&sp=r&sv=2026-06-06&sr=b&scid=d83ea4e1-4035-5ed0-83c1-f1ccdcb4b464&skoid=68f37fa7-4e08-478b-93f3-c72d563a0ab3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-14T17%3A17%3A50Z&ske=2026-11-15T17%3A17%3A50Z&sks=b&skv=2026-06-06&sig=wnxaHFKEJRfUtzUj%2BM35LkbX2To5rfvBuA/ljXC1XLo%3D"
+          ARTIFACT_URL: "https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-8a70-820e-9e34-dadb6467190f/raw?se=2026-11-15T05%3A45%3A06Z&sp=r&sv=2026-06-06&sr=b&scid=56dcb9bd-33c8-5fcc-b6e7-f6a154386088&skoid=68f37fa7-4e08-478b-93f3-c72d563a0ab3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-14T18%3A36%3A29Z&ske=2026-11-15T18%3A36%3A29Z&sks=b&skv=2026-06-06&sig=cvLmsTUr/uxcyVPFPvCPW8qus2kt%2B1zCvXAbykEagL8%3D"
         run: |
           set -euo pipefail
           curl --fail --silent --show-error --location --retry 2 --max-time 120 \
@@ -41,7 +41,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          SDK_ROOT="\${ANDROID_HOME:-\${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
           if [[ ! -x "$SDK_ROOT/build-tools/36.0.0/apksigner" ]]; then
             yes | "$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
             "$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --install "build-tools;36.0.0"
