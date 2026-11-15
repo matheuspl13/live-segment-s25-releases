@@ -1,18 +1,18 @@
 {
-  "versionCode": 49,
-  "versionName": "0.17.22-s25-all-history-diagnostics",
-  "sha256": "66283997e41102d84e911894c76d42208812ddad796bebb01a4539498fb52951",
-  "totalBytes": 2650343,
-  "notes": "B53: Novo botao EXPORTAR TODO O HISTORICO no menu Testes e Diagnostico. Reune logs antigos ainda retidos, arquivos de auditoria, atividades, estados de sessao, pausas, FINISH e notificacoes em ZIP. Nao altera o motor de competicao.",
+  "versionCode": 50,
+  "versionName": "0.17.23-s25-paiva-finish-integrity",
+  "sha256": "49129f615570638e9e4cdf604750aabecc3748b60ebb5e097e9b97545c5aefa0",
+  "totalBytes": 2654227,
+  "notes": "B54: Novo botao EXPORTAR TODO O HISTORICO no menu Testes e Diagnostico. Reune logs antigos ainda retidos, arquivos de auditoria, atividades, estados de sessao, pausas, FINISH e notificacoes em ZIP. Nao altera o motor de competicao.",
   "chunks": [
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part00.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part01.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part02.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part03.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part04.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part05.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part06.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part07.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.22-s25-all-history-diagnostics/part08.b64"
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part00.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part01.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part02.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part03.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part04.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part05.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part06.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part07.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part08.b64"
   ]
 }
