@@ -60,7 +60,7 @@ jobs:
           python3 - <<'PY'
           import os,pathlib,hashlib,base64,json
           data=(pathlib.Path(os.environ['RUNNER_TEMP'])/'b55-release.apk').read_bytes()
-          sha='49129f615570638e9e4cdf604750aabecc3748b60ebb5e097e9b97545c5aefa0'
+          sha='90a1cfb706bf2ae22518472e62787b6cd8c6225652391138da093fd7d0b6da4c'
           assert hashlib.sha256(data).hexdigest()==sha and len(data)==2655731
           existing=pathlib.Path('latest-test-s25-v2.json')
           assert existing.exists(), 'Expected B54 OTA manifest before B55 update'
