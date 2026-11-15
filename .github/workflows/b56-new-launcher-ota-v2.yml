@@ -1,0 +1,169 @@
+name: Publish verified B56 code52 via in-app V2 updater
+on:
+  push:
+    branches: [work/publish-b56-new-launcher-ota-v2-20261115]
+    paths: ['.github/workflows/b56-new-launcher-ota-v2.yml']
+permissions:
+  contents: write
+concurrency:
+  group: b56-private-release-ota-v2
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Download short-lived private signed B56 artifact and verify immutable identity
+        shell: bash
+        env:
+          ARTIFACT_URL: "https://sdmntprbrazilsouth.oaiusercontent.com/files/00000000-6db0-820e-8212-2fc7149c0b8e/raw?se=2026-11-15T11%3A49%3A01Z&sp=r&sv=2026-06-06&sr=b&scid=5828311f-e7d7-5d47-9eea-afbc811938ed&skoid=68f37fa7-4e08-478b-93f3-c72d563a0ab3&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-11-14T18%3A20%3A10Z&ske=2026-11-15T18%3A20%3A10Z&sks=b&skv=2026-06-06&sig=stVzF5Kf7cIXg7B0dPhzBIVCAhwYeYA3U3LM8VymvfU%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location --retry 2 --max-time 120 \
+            -o "$RUNNER_TEMP/b56-source.zip" "$ARTIFACT_URL"
+          python3 - <<'PY'
+          import os,pathlib,hashlib,zipfile
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])
+          with zipfile.ZipFile(p/'b56-source.zip') as z:
+              apks=[a for a in z.namelist() if a.endswith('/app-release.apk')]
+              assert len(apks)==1
+              data=z.read(apks[0])
+          assert len(data)==2663616
+          assert hashlib.sha256(data).hexdigest()=='f9e841dd9f42e6da2f9e7e550d00f30c82f750552c6522846ab6060ef03bf03b'
+          (p/'b56-release.apk').write_bytes(data)
+          print('B56_SOURCE_SIGNED_APK_HASH_AND_SIZE_PASS')
+          PY
+      - name: Verify same B51 Android signing certificate and package code52
+        shell: bash
+        run: |
+          set -euo pipefail
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          if [[ ! -x "$SDK_ROOT/build-tools/36.0.0/apksigner" ]]; then
+            yes | "$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null || true
+            "$SDK_ROOT/cmdline-tools/latest/bin/sdkmanager" --install "build-tools;36.0.0"
+          fi
+          "$SDK_ROOT/build-tools/36.0.0/apksigner" verify --verbose --print-certs "$RUNNER_TEMP/b56-release.apk" > "$RUNNER_TEMP/cert.txt"
+          grep -Fq 'Signer #1 certificate SHA-256 digest: a5864a77fbd2e737c56b1918199cff31a09d76c93273ccb67993f4d0a92f96e2' "$RUNNER_TEMP/cert.txt"
+          "$SDK_ROOT/build-tools/36.0.0/aapt" dump badging "$RUNNER_TEMP/b56-release.apk" > "$RUNNER_TEMP/package.txt"
+          grep -Fq "package: name='com.ciclismo.livesegments.multiroute' versionCode='52' versionName='0.17.25-s25-road-cycling-icon'" "$RUNNER_TEMP/package.txt"
+          echo B56_SIGNATURE_PACKAGE_AND_CODE_PASS
+      - name: Stage verified immutable OTA chunks (do NOT advertise yet)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git pull --ff-only origin main
+          python3 - <<'PY'
+          import os,pathlib,hashlib,base64,json
+          data=(pathlib.Path(os.environ['RUNNER_TEMP'])/'b56-release.apk').read_bytes()
+          sha='f9e841dd9f42e6da2f9e7e550d00f30c82f750552c6522846ab6060ef03bf03b'
+          assert hashlib.sha256(data).hexdigest()==sha and len(data)==2663616
+          existing=pathlib.Path('latest-test-s25-v2.json')
+          assert existing.exists(), 'Expected B55 OTA manifest before B56 update'
+          old=json.loads(existing.read_text())
+          assert int(old.get('versionCode',0))==51
+          assert old.get('sha256')=='90a1cfb706bf2ae22518472e62787b6cd8c6225652391138da093fd7d0b6da4c'
+          path=pathlib.Path('v0.17.25-s25-road-cycling-icon')
+          path.mkdir(exist_ok=True)
+          parts=[data[n:n+300000] for n in range(0,len(data),300000)]
+          assert len(parts)==9
+          urls=[]
+          for index,part in enumerate(parts):
+              file=path/f'part{index:02d}.b64'
+              content=base64.b64encode(part)
+              if file.exists(): assert file.read_bytes()==content
+              else: file.write_bytes(content)
+              urls.append(f'https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/{path.name}/{file.name}')
+          result=b''.join(base64.b64decode(x.read_bytes(),validate=True) for x in sorted(path.glob('part*.b64')))
+          assert result==data
+          manifest={'versionCode':52,
+              'versionName':'0.17.25-s25-road-cycling-icon',
+              'sha256':sha,'totalBytes':len(data),
+              'notes':'B56: Novo icone de bicicleta de estrada, ciclista e percurso GPS, sem texto, na tela inicial Android. Mantem integralmente as correcoes B55, o Virtual Race, Top 10, percurso Paiva, notificacoes e exportacao completa de logs.',
+              'chunks':urls}
+          (pathlib.Path(os.environ['RUNNER_TEMP'])/'b56-manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+          print(f'B56_CHUNKS_REASSEMBLED_LOCAL_PASS parts={len(parts)}')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add v0.17.25-s25-road-cycling-icon/
+          if ! git diff --staged --quiet; then
+            git commit -m "ota: stage signed B56 code52 payload; manifest not yet updated"
+            git push origin HEAD:main
+          fi
+      - name: Verify the actual public Android chunk URLs before publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os,json,hashlib,base64,time,http.client,urllib.parse
+          m=json.load(open(os.environ['RUNNER_TEMP']+'/b56-manifest.json'))
+          def get(url):
+              u=urllib.parse.urlsplit(url)
+              assert u.scheme=='https' and u.hostname=='raw.githubusercontent.com'
+              c=http.client.HTTPSConnection(u.hostname,timeout=20)
+              try:
+                  c.request('GET',u.path,headers={'Cache-Control':'no-cache'})
+                  resp=c.getresponse()
+                  assert resp.status==200, f'Unexpected HTTP {resp.status}'
+                  data=resp.read(8*1024*1024+1)
+                  assert len(data)<=8*1024*1024
+                  return data
+              finally: c.close()
+          for attempt in range(16):
+              try:
+                  data=b''.join(base64.b64decode(get(u).strip(),validate=True) for u in m['chunks'])
+                  assert len(data)==m['totalBytes'] and hashlib.sha256(data).hexdigest()==m['sha256']
+                  print('B56_PUBLIC_RAW_OTA_FULL_APK_RECONSTRUCTION_PASS')
+                  break
+              except Exception as e:
+                  if attempt==15: raise
+                  print(f'CDN retry {attempt+1}: {type(e).__name__}',flush=True)
+                  time.sleep(5)
+          PY
+      - name: Publish v2 manifest LAST (do not modify legacy feed)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git pull --ff-only origin main
+          python3 - <<'PY'
+          import json
+          old=json.load(open('latest-test-s25-v2.json'))
+          assert old['versionCode']==51
+          assert old['sha256']=='90a1cfb706bf2ae22518472e62787b6cd8c6225652391138da093fd7d0b6da4c'
+          PY
+          cp "$RUNNER_TEMP/b56-manifest.json" latest-test-s25-v2.json
+          git add latest-test-s25-v2.json
+          git commit -m "ota: advertise B56 code52 signed diagnostics on S25 V2 updater"
+          git push origin HEAD:main
+      - name: Verify public manifest served to the installed in-app updater
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import http.client,json,time
+          expected=json.load(open('latest-test-s25-v2.json'))
+          path='/matheuspl13/live-segment-s25-releases/main/latest-test-s25-v2.json'
+          for attempt in range(16):
+              c=http.client.HTTPSConnection('raw.githubusercontent.com',timeout=20)
+              try:
+                  c.request('GET',path,headers={'Cache-Control':'no-cache'})
+                  resp=c.getresponse()
+                  if resp.status==200:
+                      actual=json.loads(resp.read(256*1024).decode())
+                      if actual==expected:
+                          print('B56_IN_APP_OTA_FEED_PUBLIC_PASS')
+                          break
+              finally: c.close()
+              if attempt==15: raise RuntimeError('OTA manifest not live')
+              time.sleep(5)
+          PY
+      - name: Remove temporary signing artifact from runner
+        if: always()
+        shell: bash
+        run: rm -f "$RUNNER_TEMP/b56-source.zip" "$RUNNER_TEMP/b56-release.apk"
