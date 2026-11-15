@@ -1,0 +1,14 @@
+name: Release-repo Actions availability probe
+on:
+  push:
+    branches: [diag/check-actions-for-ota-b53-20261115]
+    paths: ['.github/workflows/ota-runner-probe.yml']
+permissions:
+  contents: read
+jobs:
+  runner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Prove runner starts before OTA publication
+        run: echo 'OTA_RELEASE_REPO_RUNNER_AVAILABLE'
