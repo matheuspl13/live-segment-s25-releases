@@ -3,7 +3,7 @@
   "versionName": "0.17.23-s25-paiva-finish-integrity",
   "sha256": "49129f615570638e9e4cdf604750aabecc3748b60ebb5e097e9b97545c5aefa0",
   "totalBytes": 2654227,
-  "notes": "B54: Novo botao EXPORTAR TODO O HISTORICO no menu Testes e Diagnostico. Reune logs antigos ainda retidos, arquivos de auditoria, atividades, estados de sessao, pausas, FINISH e notificacoes em ZIP. Nao altera o motor de competicao.",
+  "notes": "B54: Paiva encerra tentativas apos 2 horas de inatividade fisica comprovada; sem desligar uma pedalada ainda em movimento. Chegada real confirmada pelo BSC200 apos desvio sem retorno validado encerra a sessao e envia avisos SEM RANKING, sem inserir fantasmas ou alterar o Top 10. Quatro notificacoes finais com auditoria de envio; diferencas de tempo durante o pedal identificadas como parciais. START/FINISH mantidos nos pontos aprovados pela analise Python/FIT; exportacao completa de logs B53 preservada.",
   "chunks": [
     "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part00.b64",
     "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.23-s25-paiva-finish-integrity/part01.b64",
