@@ -1,7 +1,7 @@
 name: Publish verified B54 code50 via in-app V2 updater
 on:
   push:
-    branches: [work/publish-b54-signed-ota-v2-20261115]
+    branches: [work/publish-b54-paiva-finish-ota-v2-20261115]
     paths: ['.github/workflows/b54-publish-paiva-v2.yml']
 permissions:
   contents: write
