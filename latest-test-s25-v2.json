@@ -1,18 +1,18 @@
 {
-  "versionCode": 51,
-  "versionName": "0.17.24-s25-paiva-finish-durability",
-  "sha256": "90a1cfb706bf2ae22518472e62787b6cd8c6225652391138da093fd7d0b6da4c",
-  "totalBytes": 2655731,
-  "notes": "B55: Corrige quatro avisos de FINISH apos desvio confirmado pelo BSC200; mantem o servico ativo ate terminar os avisos. Salva FINISH fisico sem ranking antes de limpar a sessao, recupera apos reinicio Android e evita encerramento de ciclismo em movimento. Preserva gates Python/FIT, Top 10, pausas, tempos e exportacao completa de logs.",
+  "versionCode": 52,
+  "versionName": "0.17.25-s25-road-cycling-icon",
+  "sha256": "f9e841dd9f42e6da2f9e7e550d00f30c82f750552c6522846ab6060ef03bf03b",
+  "totalBytes": 2663616,
+  "notes": "B56: Novo icone de bicicleta de estrada, ciclista e percurso GPS, sem texto, na tela inicial Android. Mantem integralmente as correcoes B55, o Virtual Race, Top 10, percurso Paiva, notificacoes e exportacao completa de logs.",
   "chunks": [
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part00.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part01.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part02.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part03.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part04.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part05.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part06.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part07.b64",
-    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.24-s25-paiva-finish-durability/part08.b64"
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part00.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part01.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part02.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part03.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part04.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part05.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part06.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part07.b64",
+    "https://raw.githubusercontent.com/matheuspl13/live-segment-s25-releases/main/v0.17.25-s25-road-cycling-icon/part08.b64"
   ]
 }
